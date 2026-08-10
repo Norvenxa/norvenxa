@@ -35,7 +35,7 @@ export function SiteFooter() {
             <li><Link to="/sobre" className="hover:text-foreground">Sobre nosotros</Link></li>
             <li><Link to="/contacto" className="hover:text-foreground">Contacto</Link></li>
             <li><Link to="/aviso-legal" className="hover:text-foreground">Aviso Legal</Link></li>
-            <li><Link to="/pilitica-privacidad" className="hover:text-foreground">Política de Privacidad</Link></li>
+            <li><Link to="/politica-privacidad" className="hover:text-foreground">Política de Privacidad</Link></li>
             <li><Link to="/politica-cookies" className="hover:text-foreground">Política de Cookies</Link></li>
           </ul>
         </div>

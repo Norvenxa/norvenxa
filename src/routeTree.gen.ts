@@ -11,8 +11,8 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as PoliticaPrivacidadRouteImport } from './routes/politica-privacidad'
 import { Route as PoliticaCookiesRouteImport } from './routes/politica-cookies'
-import { Route as PiliticaPrivacidadRouteImport } from './routes/pilitica-privacidad'
 import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as BuscarRouteImport } from './routes/buscar'
 import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
@@ -31,14 +31,14 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PoliticaPrivacidadRoute = PoliticaPrivacidadRouteImport.update({
+  id: '/politica-privacidad',
+  path: '/politica-privacidad',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PoliticaCookiesRoute = PoliticaCookiesRouteImport.update({
   id: '/politica-cookies',
   path: '/politica-cookies',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PiliticaPrivacidadRoute = PiliticaPrivacidadRouteImport.update({
-  id: '/pilitica-privacidad',
-  path: '/pilitica-privacidad',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactoRoute = ContactoRouteImport.update({
@@ -82,8 +82,8 @@ export interface FileRoutesByFullPath {
   '/aviso-legal': typeof AvisoLegalRoute
   '/buscar': typeof BuscarRoute
   '/contacto': typeof ContactoRoute
-  '/pilitica-privacidad': typeof PiliticaPrivacidadRoute
   '/politica-cookies': typeof PoliticaCookiesRoute
+  '/politica-privacidad': typeof PoliticaPrivacidadRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/articulos/$slug': typeof ArticulosSlugRoute
@@ -95,8 +95,8 @@ export interface FileRoutesByTo {
   '/aviso-legal': typeof AvisoLegalRoute
   '/buscar': typeof BuscarRoute
   '/contacto': typeof ContactoRoute
-  '/pilitica-privacidad': typeof PiliticaPrivacidadRoute
   '/politica-cookies': typeof PoliticaCookiesRoute
+  '/politica-privacidad': typeof PoliticaPrivacidadRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/articulos/$slug': typeof ArticulosSlugRoute
@@ -109,8 +109,8 @@ export interface FileRoutesById {
   '/aviso-legal': typeof AvisoLegalRoute
   '/buscar': typeof BuscarRoute
   '/contacto': typeof ContactoRoute
-  '/pilitica-privacidad': typeof PiliticaPrivacidadRoute
   '/politica-cookies': typeof PoliticaCookiesRoute
+  '/politica-privacidad': typeof PoliticaPrivacidadRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/articulos/$slug': typeof ArticulosSlugRoute
@@ -124,8 +124,8 @@ export interface FileRouteTypes {
     | '/aviso-legal'
     | '/buscar'
     | '/contacto'
-    | '/pilitica-privacidad'
     | '/politica-cookies'
+    | '/politica-privacidad'
     | '/sitemap.xml'
     | '/sobre'
     | '/articulos/$slug'
@@ -137,8 +137,8 @@ export interface FileRouteTypes {
     | '/aviso-legal'
     | '/buscar'
     | '/contacto'
-    | '/pilitica-privacidad'
     | '/politica-cookies'
+    | '/politica-privacidad'
     | '/sitemap.xml'
     | '/sobre'
     | '/articulos/$slug'
@@ -150,8 +150,8 @@ export interface FileRouteTypes {
     | '/aviso-legal'
     | '/buscar'
     | '/contacto'
-    | '/pilitica-privacidad'
     | '/politica-cookies'
+    | '/politica-privacidad'
     | '/sitemap.xml'
     | '/sobre'
     | '/articulos/$slug'
@@ -164,8 +164,8 @@ export interface RootRouteChildren {
   AvisoLegalRoute: typeof AvisoLegalRoute
   BuscarRoute: typeof BuscarRoute
   ContactoRoute: typeof ContactoRoute
-  PiliticaPrivacidadRoute: typeof PiliticaPrivacidadRoute
   PoliticaCookiesRoute: typeof PoliticaCookiesRoute
+  PoliticaPrivacidadRoute: typeof PoliticaPrivacidadRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
   ArticulosSlugRoute: typeof ArticulosSlugRoute
@@ -189,18 +189,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/politica-privacidad': {
+      id: '/politica-privacidad'
+      path: '/politica-privacidad'
+      fullPath: '/politica-privacidad'
+      preLoaderRoute: typeof PoliticaPrivacidadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/politica-cookies': {
       id: '/politica-cookies'
       path: '/politica-cookies'
       fullPath: '/politica-cookies'
       preLoaderRoute: typeof PoliticaCookiesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pilitica-privacidad': {
-      id: '/pilitica-privacidad'
-      path: '/pilitica-privacidad'
-      fullPath: '/pilitica-privacidad'
-      preLoaderRoute: typeof PiliticaPrivacidadRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contacto': {
@@ -260,8 +260,8 @@ const rootRouteChildren: RootRouteChildren = {
   AvisoLegalRoute: AvisoLegalRoute,
   BuscarRoute: BuscarRoute,
   ContactoRoute: ContactoRoute,
-  PiliticaPrivacidadRoute: PiliticaPrivacidadRoute,
   PoliticaCookiesRoute: PoliticaCookiesRoute,
+  PoliticaPrivacidadRoute: PoliticaPrivacidadRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
   ArticulosSlugRoute: ArticulosSlugRoute,
