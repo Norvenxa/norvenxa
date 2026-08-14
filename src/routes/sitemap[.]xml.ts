@@ -3,7 +3,7 @@ import type {} from "@tanstack/react-start";
 import { ARTICLES, CATEGORIES } from "@/data/articles";
 
 // TODO: replace with your project URL once a project name or custom domain is set.
-const BASE_URL = "";
+const BASE_URL = "https://norvenxa.norvenxa.workers.dev";
 
 interface SitemapEntry {
   path: string;
